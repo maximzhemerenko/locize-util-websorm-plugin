@@ -7,11 +7,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class TranslationUtil(private val project: Project) {
-    fun run(command: String, namespace: String) {
+    fun run(command: String, namespace: String? = null) {
         CoroutineScope(Dispatchers.EdtImmediate).launch {
             saveOpenFiles()
 
-            ShellScript(project).run(listOf("yarn", "locize", command, "--namespace", namespace))
+            val command = mutableListOf("yarn", "locize", command).apply {
+                if (namespace != null) {
+                    addAll(listOf("--namespace", namespace))
+                }
+            }
+
+            ShellScript(project).run(command)
 
             updateOpenFiles(project)
 
