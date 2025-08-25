@@ -11,13 +11,13 @@ class TranslationUtil(private val project: Project) {
         CoroutineScope(Dispatchers.EdtImmediate).launch {
             saveOpenFiles()
 
-            val command = mutableListOf("yarn", "locize", command).apply {
+            val args = mutableListOf("yarn", "locize", command).apply {
                 if (namespace != null) {
                     addAll(listOf("--namespace", namespace))
                 }
             }
 
-            ShellScript(project).run(command)
+            ShellScript(project).run(args)
 
             updateOpenFiles(project)
 
