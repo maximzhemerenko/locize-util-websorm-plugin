@@ -33,6 +33,8 @@
             <action id="locize-dev" class="com.locizehelper.actions.LocizeDevAction" text="Locize DEV" />
 
             <action id="locize-get" class="com.locizehelper.actions.LocizeGetAction" text="Locize GET"/>
+
+            <action id="locize-get-all" class="com.locizehelper.actions.LocizeGetAllAction" text="Locize GET ALL"/>
         </group>
     </actions>
 </idea-plugin>
