@@ -39,6 +39,10 @@
             <action id="locize-get" class="com.locizehelper.actions.LocizeGetAction" text="Locize GET" />
 
             <action id="locize-get-all" class="com.locizehelper.actions.LocizeGetAllAction" text="Locize GET ALL" />
+
+            <separator />
+
+            <group id="locize-relase" popup="true" class="com.locizehelper.actions.LocizeReleaseGroup" text="Locize RELEASE" />
         </group>
     </actions>
 </idea-plugin>
