@@ -6,7 +6,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.locizehelper.core.TranslationUtil
 import com.locizehelper.core.getNamespace
 
-class LocizeDevAction : AnAction() {
+class LocizeDevAction() : AnAction("Locize DEV") {
     override fun actionPerformed(e: AnActionEvent) {
         val project = e.project ?: return
         val file = e.getData(CommonDataKeys.VIRTUAL_FILE) ?: return

@@ -1,13 +1,22 @@
 package com.locizehelper.actions
 
 import com.intellij.openapi.actionSystem.ActionGroup
+import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.Separator
 import com.locizehelper.core.getReleases
 
-class LocizeReleaseGroup : ActionGroup() {
-    override fun getChildren(e: AnActionEvent?): Array<LocizeReleaseAction> {
+class LocizeReleaseGroup : ActionGroup("RELEASE", true) {
+    override fun getChildren(e: AnActionEvent?): Array<AnAction> {
         val project = e?.project ?: return emptyArray()
 
-        return getReleases(project).map { LocizeReleaseAction(it) }.toTypedArray()
+        return mutableListOf<AnAction>().apply {
+            getReleases(project).forEach {
+                add(Separator("${it.product} [${it.version}]"))
+
+                add(LocizeGetAllAction(it))
+                add(LocizeDevSyncAction(it))
+            }
+        }.toTypedArray()
     }
 }

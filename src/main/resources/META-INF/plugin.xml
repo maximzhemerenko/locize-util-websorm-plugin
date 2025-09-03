@@ -29,20 +29,6 @@
     <actions>
         <group id="locize-popup" popup="true" class="com.locizehelper.actions.LocizeButtonGroup" icon="/icons/icon.svg">
             <add-to-group group-id="MainToolbarRight" anchor="first" />
-
-            <action id="locize-dev" class="com.locizehelper.actions.LocizeDevAction" text="Locize DEV" />
-
-            <action id="locize-dev-sync" class="com.locizehelper.actions.LocizeDevSyncAction" text="Locize DEV SYNC" />
-
-            <separator />
-
-            <action id="locize-get" class="com.locizehelper.actions.LocizeGetAction" text="Locize GET" />
-
-            <action id="locize-get-all" class="com.locizehelper.actions.LocizeGetAllAction" text="Locize GET ALL" />
-
-            <separator />
-
-            <group id="locize-relase" popup="true" class="com.locizehelper.actions.LocizeReleaseGroup" text="Locize RELEASE" />
         </group>
     </actions>
 </idea-plugin>
