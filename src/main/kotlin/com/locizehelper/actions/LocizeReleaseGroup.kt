@@ -16,6 +16,7 @@ class LocizeReleaseGroup : ActionGroup("RELEASE", true) {
 
                 add(LocizeGetAllAction(it))
                 add(LocizeDevSyncAction(it))
+                add(LocizePublishAction(it))
             }
         }.toTypedArray()
     }
