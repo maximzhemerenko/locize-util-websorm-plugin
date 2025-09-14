@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.ActionGroup
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.Separator
+import com.locizehelper.actions.publish.LocizePublishAction
 import com.locizehelper.core.getReleases
 
 class LocizeReleaseGroup : ActionGroup("RELEASE", true) {
@@ -16,8 +17,11 @@ class LocizeReleaseGroup : ActionGroup("RELEASE", true) {
 
                 add(LocizeGetAllAction(it))
                 add(LocizeDevSyncAction(it))
-                add(LocizePublishAction(it))
             }
+
+            add(Separator())
+
+            add(LocizePublishAction())
         }.toTypedArray()
     }
 }
