@@ -15,7 +15,7 @@ class LocizeDevSyncAction(private val release: Release? = null) : AnAction(if (r
 
         val namespace = getNamespace(file)
 
-        val versionDescription = if (release == null) "" else "(${release.product} ${release.version})"
+        val versionDescription = if (release == null) "" else "(${release.version})"
 
         if (Messages.showYesNoDialog(
                 e.project,
