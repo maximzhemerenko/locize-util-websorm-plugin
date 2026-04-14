@@ -12,7 +12,7 @@ class TranslationUtil(private val project: Project) {
             saveOpenFiles()
 
             val args = mutableListOf("yarn", "locize", command).apply {
-                if (release != null) addAll(listOf(release.version, "--${release.product}"))
+                if (release != null) addAll(listOf(release.version))
 
                 if (namespace != null) addAll(listOf("--namespace", namespace))
 
