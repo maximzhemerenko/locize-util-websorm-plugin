@@ -1,11 +1,11 @@
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.1.0"
-    id("org.jetbrains.intellij.platform") version "2.5.0"
+    id("org.jetbrains.kotlin.jvm") version "2.3.0"
+    id("org.jetbrains.intellij.platform") version "2.20.0"
 }
 
 group = "com.locizehelper"
-version = "1.7.0"
+version = "1.8.0"
 
 repositories {
     mavenCentral()
@@ -17,9 +17,13 @@ repositories {
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     intellijPlatform {
-        create("WS", "2025.2")
+        webstorm("2026.1.5.1")
+        bundledPlugin("Git4Idea")
     }
+
     implementation("com.sshtools:jini-lib:0.5.5")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.22.4")
 }
 
 intellijPlatform {
